@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "345770425108",
+    "project_id": "ncertbook-8b528",
+    "storage_bucket": "ncertbook-8b528.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:345770425108:android:2d54b55ac9a427a93ee001",
+        "android_client_info": {
+          "package_name": "com.admin.ncert_book"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "345770425108-e1b4lal227aq21v902cu655f56mc3p7m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8UMpXKXTDe6ZJJmTqg9XL6ihP913hBxA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "345770425108-e1b4lal227aq21v902cu655f56mc3p7m.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "345770425108-4eush521hs4t1p692e039aolbk46h7cl.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.ncertBookAdmin"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:345770425108:android:e230b07e5dfbef7f3ee001",
+        "android_client_info": {
+          "package_name": "com.flutterharsh.ncert_book_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "345770425108-e1b4lal227aq21v902cu655f56mc3p7m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8UMpXKXTDe6ZJJmTqg9XL6ihP913hBxA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "345770425108-e1b4lal227aq21v902cu655f56mc3p7m.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "345770425108-4eush521hs4t1p692e039aolbk46h7cl.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.ncertBookAdmin"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
