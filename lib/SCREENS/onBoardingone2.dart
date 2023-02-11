@@ -1,13 +1,13 @@
-import 'package:Ncert_Helper/Constants/constants.dart';
-import 'package:Ncert_Helper/SCREENS/newHomescreen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import '../Constants/constants.dart';
 import '../Global/global.dart';
-import 'homescreen.dart';
+import 'newHomescreen.dart';
 
 class onBoardingtwo extends StatelessWidget {
   onBoardingtwo({super.key});
@@ -52,7 +52,10 @@ class onBoardingtwo extends StatelessWidget {
             .set(
           {
             "Email": _username.text.toString(),
-            "Creation-time": "${ DateFormat.MEd().format( DateTime.now() ).toString()}"
+            "Creation-date":
+                "${DateFormat.MEd().format(DateTime.now()).toString()}",
+            "Creation-time":
+                "${DateFormat.Hms().format(DateTime.now()).toString()}"
           },
         );
         EasyLoading.dismiss();
@@ -80,7 +83,7 @@ class onBoardingtwo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print( sharedPreferences!.getString("Username") );
+    print(sharedPreferences!.getString("Username"));
     var screenHeight = MediaQuery.of(context).size.height;
     var screenwidth = MediaQuery.of(context).size.width;
     return Scaffold(
@@ -172,9 +175,9 @@ class onBoardingtwo extends StatelessWidget {
                               borderRadius: BorderRadius.circular(15)),
                           child: Center(
                             child: TextField(
-                              onSubmitted: (value) {
-                                checkField();
-                              },
+                              // onSubmitted: (value) {
+                              //   checkField();
+                              // },
                               style: SET_FONT_STYLE(
                                 20,
                                 FontWeight.w500,
@@ -206,8 +209,42 @@ class onBoardingtwo extends StatelessWidget {
                           ),
                           height: screenHeight * 0.065,
                           child: ElevatedButton(
-                              onPressed: () {
+                              onPressed: () async {
+                                final connectivityResult =
+                                    await (Connectivity().checkConnectivity());
+                                if (connectivityResult ==
+                                    ConnectivityResult.none) {
+                                  Get.defaultDialog(
+                                    title: "",
+                                    content: Column(
+                                      children: [
+                                        Image(
+                                          image:
+                                              AssetImage("assets/browser.png"),
+                                          height: 100,
+                                          width: 100,
+                                        ),
+                                        SizedBox(
+                                          height: 15,
+                                        ),
+                                        Text(
+                                          "Oops, you are not connected with Internet please connect anf try again...",
+                                          style: SET_FONT_STYLE(
+                                            20,
+                                            FontWeight.w500,
+                                            Color.fromARGB(255, 23, 23, 23),
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          height: 15,
+                                        ),
+                                      ],
+                                    ),
+                                  );
+                                }else{
                                 checkField();
+
+                                }
                               },
                               child: Text(
                                 "Submit",
